@@ -1,0 +1,17 @@
+.cart-container {
+  font-family: 'Poppins', sans-serif;
+  padding: 80px;
+  text-align: center;
+  background: #f7f8fa;
+  min-height: 100vh;
+}
+
+.cart-container h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.cart-container p {
+  color: #666;
+  font-size: 1rem;
+}

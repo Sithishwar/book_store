@@ -23,17 +23,17 @@ public class BookStoreService {
         }
     }
 
-    public boolean loginUser(String username, String password) {
+    public Integer loginUser(String username, String password) {
         try {
-            Integer count = jdbcTemplate.queryForObject(
-                "SELECT COUNT(*) FROM users WHERE username=? AND password=?",
+            return jdbcTemplate.queryForObject(
+                "SELECT id FROM users WHERE username=? AND password=?",
                 Integer.class, username, password
             );
-            return count != null && count > 0;
         } catch (Exception e) {
-            return false;
+            return null;
         }
     }
+
 
     public List<Map<String, Object>> getAllBooks() {
         return jdbcTemplate.queryForList("SELECT * FROM books");
